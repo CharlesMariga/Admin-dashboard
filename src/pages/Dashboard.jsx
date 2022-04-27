@@ -1,7 +1,7 @@
 import React from "react";
 
 import Chart from "react-apexcharts";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import Table from "../components/table/Table";
 import Badge from "../components/badge/Badge";
@@ -176,7 +176,7 @@ const Dashboard = () => {
               />
             </div>
             <div className="card__footer">
-              <Link to="/">View All</Link>
+              <NavLink to="/customers">View All</NavLink>
             </div>
           </div>
         </div>
@@ -194,7 +194,7 @@ const Dashboard = () => {
               />
             </div>
             <div className="card__footer">
-              <Link to="/">View all</Link>
+              <NavLink to="/">View all</NavLink>
             </div>
           </div>
         </div>
