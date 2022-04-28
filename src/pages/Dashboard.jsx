@@ -3,6 +3,9 @@ import React from "react";
 import Chart from "react-apexcharts";
 import { NavLink } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+import { selectMode } from "../features/theme/themeSlice";
+
 import Table from "../components/table/Table";
 import Badge from "../components/badge/Badge";
 import statusCards from "../assets/JsonData/status-card-data.json";
@@ -139,6 +142,8 @@ const renderOrderBody = (item, index) => (
 );
 
 const Dashboard = () => {
+  const mode = useSelector(selectMode);
+
   return (
     <div>
       <h2 className="page-header">Dashboard</h2>
@@ -155,7 +160,11 @@ const Dashboard = () => {
         <div className="col-6">
           <div className="card full-height">
             <Chart
-              options={chartOptions.options}
+              options={
+                mode === "theme-mode-dark"
+                  ? { ...chartOptions.options, theme: { mode: "dark" } }
+                  : { ...chartOptions.options, theme: { mode: "light" } }
+              }
               series={chartOptions.series}
               type="line"
               height="100%"

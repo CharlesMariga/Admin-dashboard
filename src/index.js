@@ -2,19 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 
+import { Provider } from "react-redux";
+import store from "./app/store";
+import Layout from "./components/layout/Layout";
+
 import "./assets/boxicons-2.0.7/css/boxicons.min.css";
 import "./assets/css/grid.css";
-import "./assets/css/index.css";
 import "./assets/css/theme.css";
-
-import Layout from "./components/layout/Layout";
+import "./assets/css/index.css";
 
 document.title = "Tau CRM";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Layout />
+    <Provider store={store}>
+      <Layout />
+    </Provider>
   </React.StrictMode>
 );
 

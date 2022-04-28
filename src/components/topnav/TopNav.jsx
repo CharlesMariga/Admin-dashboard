@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import "./topnav.css";
 
 import Dropdown from "../dropdowns/Dropdown";
+import ThemeMenu from "../thememenu/ThemeMenu";
+
 import notifications from "../../assets/JsonData/notification.json";
 import user_image from "../../assets/images/tuat.png";
 import user_menu from "../../assets/JsonData/user_menus.json";
@@ -59,11 +61,11 @@ const TopNav = () => {
             badge="12"
             contentData={notifications}
             renderItems={renderNotificationItem}
-            // renderFooter={() => <NavLink to="/">View All</NavLink>}
+            renderFooter={() => <NavLink to="/">View All</NavLink>}
           />
         </div>
         <div className="topnav__right-item">
-          <Dropdown />
+          <ThemeMenu />
         </div>
       </div>
     </div>
